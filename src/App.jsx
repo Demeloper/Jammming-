@@ -13,24 +13,32 @@ export default function App() {
   const [playlistName, setPlaylistName] = useState('My Playlist'); 
   const [playlistTracks, setPlaylistTracks] = useState([]);
   const [term, setTerm] = useState('');
-
+//ADDING A TRACK 
 const addTrack = (track) => {
   setPlaylistTracks((prev) => {
     const alreadyInPlaylist = prev.some((t) => t.id === track.id);
     return alreadyInPlaylist ? prev : [...prev, track]; 
   });
 };
-
-
+//REMOVING A TRACK 
 const removeTrack = (track) => {
   setPlaylistTracks((prev) => prev.filter((t) => t.id !== track.id)); 
 };
+const savePlaylist = () => {
+  const trackIds = playlistTracks.map(t => t.id); 
+  console.log({playlistName, tracks: trackIds }); 
+  
+  setPlaylistName("New Playlist"); 
+  setPlaylistTracks([]); 
+}; 
+
 
 const searchResults = mockTracks.filter((track) => {
   const matchesTerm = track.name.toLowerCase().includes(term.toLocaleLowerCase());
   const notInPlaylist = !playlistTracks.some((pt) => pt.id === track.id); 
   return matchesTerm && notInPlaylist; 
 });
+
 
 
   return (
@@ -46,7 +54,9 @@ const searchResults = mockTracks.filter((track) => {
         onNameChange={setPlaylistName}
         tracks={playlistTracks}
         onRemove={removeTrack}
+        onSave={savePlaylist} 
         />
     </>
   );
+
 }

@@ -1,7 +1,7 @@
 import Tracklist from '../Tracklist/Tracklist';
 
 
-export default function Playlist({ name, onNameChange, tracks, onRemove }) {
+export default function Playlist({ name, onNameChange, tracks, onRemove, onSave }) {
   return (
     <section>
         <h2>{name}</h2>
@@ -12,7 +12,7 @@ export default function Playlist({ name, onNameChange, tracks, onRemove }) {
 
         <Tracklist tracks={tracks} actionLabel="-" onAction={onRemove} />
         
-        <button>Save To Spotify</button>
+        <button onClick={onSave}>Save To Spotify</button>
     </section>
   );
 }

@@ -1,6 +1,4 @@
 import Track from '../Track/Track';
-
-
 export default function Tracklist({ tracks, actionLabel, onAction }) {
     return (
         <div>

@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.heading {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #2a2f3a;
+  background: #454646;
+  color: inherit;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3a4150;
+}
+
+.button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #2a2f3a;
+  background: #0f1115;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: #3a4150;
+}

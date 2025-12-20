@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.module.css';
 import { useState } from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchResults from './components/SearchResults/SearchResults';
@@ -59,14 +59,20 @@ const handleConnect = async () => {
 };
 
   return (
-    <>
-    <button onClick={handleConnect}>Connect Spotify</button>
-      <h1>Jammming</h1>
+    <div className={styles.app}>
+      <header className={styles.header}>  
+        <h1 className={styles.title}>Jammming</h1>
+        <button className={styles.button} onClick={handleConnect}>
+          Connect Spotify
+    </button>
+    </header>  
 
-      <SearchBar term={term} onTermChange={setTerm} onSearch={handleSearch} />
-
-      <SearchResults tracks={displayResults} onAdd={addTrack} />
-      
+    <main className={styles.main}>
+      <section className={styles.panel}>
+        <SearchBar claaterm={term} onTermChange={setTerm} onSearch={handleSearch} />
+        <SearchResults tracks={displayResults} onAdd={addTrack} />
+      </section>
+    <section className={styles.panel}>
       <Playlist 
         name={playlistName}
         onNameChange={setPlaylistName}
@@ -74,8 +80,10 @@ const handleConnect = async () => {
         onRemove={removeTrack}
         onSave={savePlaylist} 
         />
-        
-    </>
-  );
+    </section>  
+  </main>
+</div> 
+
+);
 
 }

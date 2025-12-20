@@ -1,0 +1,54 @@
+.app {
+  min-height: 100vh;
+  padding: 24px;
+  background: #0f1115;
+  color: #e7e7e7;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+.panel {
+  padding: 16px;
+  border: 1px solid #2a2f3a;
+  border-radius: 16px;
+  background: #151923;
+}
+
+.button {
+  padding: 10px 14px;
+  border: 1px solid #2a2f3a;
+  border-radius: 12px;
+  background: #151923;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: #3a4150;
+}
+  

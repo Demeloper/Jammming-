@@ -16,11 +16,6 @@ export default function SearchBar({ term, onTermChange, onSearch }) {
           className={styles.button}
           type="button"
           onClick={() => onSearch(term)}
-          onClick={() => {
-           console.log("SEARCH CLICK term:", term);
-            onSearch(term);
-}}
-
         >
           Search
         </button>

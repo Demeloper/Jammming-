@@ -75,6 +75,14 @@ export const Spotify = {
     // 3) We have a code -> exchange it for an access token
     const verifier = sessionStorage.getItem(VERIFIER_KEY);
 
+    if (!verifier) {
+  // We have a code but lost the verifier (e.g. storage cleared).
+  // Reset and restart auth flow.
+  url.searchParams.delete("code");
+  window.history.replaceState({}, document.title, url.toString());
+  return this.getAccessToken();
+}
+
     const body = new URLSearchParams();
     body.set("client_id", clientId);
     body.set("grant_type", "authorization_code");

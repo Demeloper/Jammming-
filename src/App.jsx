@@ -19,7 +19,9 @@ export default function App() {
   //Handler for search
 
 const handleSearch = async (term) => {
-  const results = await Spotify.search(term); 
+  console.log("HANDLE SEARCH term:", term);
+  const results = await Spotify.search(term);
+  console.log("SPOTIFY RESULTS:", results);  
   setSearchResults(results); 
 }; 
 
@@ -69,7 +71,7 @@ const handleConnect = async () => {
 
     <main className={styles.main}>
       <section className={styles.panel}>
-        <SearchBar claaterm={term} onTermChange={setTerm} onSearch={handleSearch} />
+        <SearchBar term={term} onTermChange={setTerm} onSearch={handleSearch} />
         <SearchResults tracks={displayResults} onAdd={addTrack} />
       </section>
     <section className={styles.panel}>

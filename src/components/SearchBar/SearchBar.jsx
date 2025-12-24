@@ -1,25 +1,26 @@
-import styles from './SearchBar.module.css'; 
+import styles from './SearchBar.module.css';
 
 export default function SearchBar({ term, onTermChange, onSearch }) {
-    return (
-        <div className={styles.container}>
-            <h2 className={styles.heading}>Search</h2>
-                
-        <div className={styles.controls}>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch(term);
+  };
+
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.heading}>Search</h2>
+
+      <form className={styles.controls} onSubmit={handleSubmit}>
         <input
           className={styles.input}
           value={term}
           onChange={(e) => onTermChange(e.target.value)}
           placeholder="Search songs..."
         />
-        <button
-          className={styles.button}
-          type="button"
-          onClick={() => onSearch(term)}
-        >
+        <button className={styles.button} type="submit">
           Search
         </button>
-      </div>
+      </form>
     </div>
   );
 }

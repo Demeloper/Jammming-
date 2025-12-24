@@ -1,11 +1,18 @@
+import styles from './Track.module.css'
 export default function Track({ track, actionLabel, onAction }) {
     return (
-        <article>
-        <div>
-            <h3>{track.name}</h3>
-            <p>{track.artist} | {track.album}</p>
+        <article className={styles.track}>
+        <div className={styles.info}>
+            <h3 className={styles.title}>{track.name}</h3>
+            <p className={styles.meta}>{track.artist} | {track.album}</p>
         </div>
-        <button onClick={() => onAction(track)}>{actionLabel}</button>
+        <button 
+        className={styles.action} 
+        type="button"
+        onClick={() => onAction(track)}
+        >
+            {actionLabel}
+        </button>
         </article>
     );
 }

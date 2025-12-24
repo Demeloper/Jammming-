@@ -30,11 +30,6 @@
   border-color: #3a4150;
 }
 
-/* Wrapper around <TrackList .../> (since TrackList doesn't accept className yet) */
-.tracklist {
-  display: grid;
-  gap: 10px;
-}
 
 /* Save button */
 .button {

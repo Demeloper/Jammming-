@@ -1,0 +1,39 @@
+.track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #2a2f3a;
+  border-radius: 12px;
+  background: #0f1115;
+}
+
+.info {
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.meta {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.action {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid #2a2f3a;
+  background: #454646;
+  color: inherit;
+  cursor: pointer;
+}
+
+.action:hover {
+  border-color: #3a4150;
+}

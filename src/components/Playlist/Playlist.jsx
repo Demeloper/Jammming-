@@ -16,7 +16,10 @@ export default function Playlist({ name, onNameChange, tracks, onRemove, onSave 
         <Tracklist tracks={tracks} actionLabel="-" onAction={onRemove} />
         </div>
         
-        <button className={styles.button} onClick={onSave}>Save To Spotify</button>
+        <button 
+        className={styles.button} 
+        type="button"
+        onClick={onSave}>Save To Spotify</button>
     </div>
     </div>
   );

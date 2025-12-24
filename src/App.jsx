@@ -19,9 +19,7 @@ export default function App() {
   //Handler for search
 
 const handleSearch = async (term) => {
-  console.log("HANDLE SEARCH term:", term);
-  const results = await Spotify.search(term);
-  console.log("SPOTIFY RESULTS:", results);  
+  const results = await Spotify.search(term); 
   setSearchResults(results); 
 }; 
 
